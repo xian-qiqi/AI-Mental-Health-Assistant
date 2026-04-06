@@ -1,12 +1,12 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue()], // 只写一次
+  base: "/AI-Mental-Health-Assistant/", // 关键修复
 
-  server:{
-    proxy:{
+  server: {
+    proxy: {
       '/api': {
         target: 'http://159.75.169.224:1235',
         changeOrigin: true
