@@ -4,6 +4,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue()], // 只写一次
   // base: "/AI-Mental-Health-Assistant/", 
+  base: '/AI-Mental-Health-Assistant/',  // 添加这个配置
   
   server: {
     proxy: {
