@@ -3,9 +3,8 @@ import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
   plugins: [vue()], // 只写一次
-  // base: "/AI-Mental-Health-Assistant/", // 关键修复 // 只写一次
-  base: "/AI-Mental-Health-Assistant/", // 关键修复
-
+  // base: "/AI-Mental-Health-Assistant/", 
+  
   server: {
     proxy: {
       '/api': {
