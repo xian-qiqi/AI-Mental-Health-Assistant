@@ -1,4 +1,5 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory} from "vue-router";
+import { createWebHashHistory} from 'vue-router'
 import BackendLayout from "../components/BackendLayout.vue";
 import Dashboard from "../views/Dashboard.vue";
 import Knowledge from "../views/Knowledge.vue";
@@ -120,7 +121,8 @@ const frontendRoutes = [
 
 ]
 const router = createRouter({
-    history: createWebHistory(),
+    // history: createWebHistory(),
+    history: createWebHashHistory(), // 只改这一行！用于打包
     routes: [...backendRoutes, ...frontendRoutes]
 })
 
