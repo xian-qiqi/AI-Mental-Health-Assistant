@@ -1,5 +1,6 @@
 <template>
   <!-- ?这是从哪里确定是64px的？？？  -->
+   <!-- !可以添加部分---当页面宽度小于1200px时，侧边栏宽度为64px，否则为264px -->
     <el-aside :width="isCollapse?'64px':'264px'">
         <el-menu
         :collapse="isCollapse"

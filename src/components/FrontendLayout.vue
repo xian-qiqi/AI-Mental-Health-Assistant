@@ -22,7 +22,7 @@
         </div>
         <div class="footer-container">
             <div class="footer-bottom">
-                <p>&copy; 2023 心理健康AI助手. All rights reserved.</p>
+                <p>&copy; 2026 心理健康AI助手. All rights reserved.</p>
             </div>
         </div>
     </div>

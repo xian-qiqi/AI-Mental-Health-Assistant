@@ -121,8 +121,8 @@ const frontendRoutes = [
 
 ]
 const router = createRouter({
-    // history: createWebHistory(),
-    history: createWebHashHistory(), // 只改这一行！用于打包
+    history: createWebHistory(),
+    // history: createWebHashHistory(), // 只改这一行！用于打包
     routes: [...backendRoutes, ...frontendRoutes]
 })
 

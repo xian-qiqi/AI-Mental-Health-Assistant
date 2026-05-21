@@ -3,7 +3,7 @@
         <div class="title">
             <div class="back-home">
                 <el-icon><Back /></el-icon>
-                <span>返回首页</span>
+                <span @click="router.push('/')">返回首页</span>
             </div>
             <div class="title-text">
                 <h2>登陆您的账户</h2>
@@ -20,7 +20,7 @@
                 <el-form-item label="用户名或邮箱" prop="username">
                     <el-input v-model="formDate.username" size="large" placeholder="请输入用户名或邮箱"/>
                 </el-form-item>
-                <el-form-item label="密码" prop="passward">
+                <el-form-item label="密码" prop="password">
                     <el-input v-model="formDate.password" size="large" placeholder="请输入密码" type="password" show-password/>
                 </el-form-item>
                 <el-button class="btn" type="primary" @click="submitForm(ruleFormRef)">登录账户</el-button>
