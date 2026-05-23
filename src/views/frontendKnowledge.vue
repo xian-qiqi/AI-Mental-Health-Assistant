@@ -76,7 +76,9 @@ import { ref, reactive, onMounted } from 'vue'
 import {getKnowledgeArticles} from '../api/fronted'
 import { dayjs } from 'element-plus'
 import router from '../router'
+import { resolveFileUrl } from '../config'
 const iconUrl = new URL('../assets/images/book.png', import.meta.url).href
+const coverFallbackUrl = new URL('../assets/images/book.png', import.meta.url).href
 //获取推荐列表
 const recommendList = ref([])
 //右侧列表数据
@@ -95,13 +97,14 @@ const getPageList = () => {
     }
     getKnowledgeArticles(params).then(res => {
         console.log("获取知识库文章列表接口返回", res)
-        articleList.value = res.records
-        pagination.total = res.total
+        const pageData = res?.records ? res : res?.data ?? {}
+        articleList.value = Array.isArray(pageData.records) ? pageData.records : []
+        pagination.total = pageData.total ?? 0
     })
 }
 //获取封面图片
 const getImage = (url) => {   
-    return url ? 'http://159.75.169.224:1235' + url : 'https://file.itndedu.com/psychology_ai.png'
+    return resolveFileUrl(url, coverFallbackUrl)
 }
 
 const handleChange = (page) => {
@@ -121,7 +124,8 @@ onMounted(()=>{
     getPageList()
     getKnowledgeArticles(params).then(res => {
         console.log("获取知识库文章列表接口返回", res)
-        recommendList.value = res.records
+        const pageData = res?.records ? res : res?.data ?? {}
+        recommendList.value = Array.isArray(pageData.records) ? pageData.records : []
     })
 }) 
 </script>

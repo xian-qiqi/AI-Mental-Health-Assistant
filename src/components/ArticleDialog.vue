@@ -71,7 +71,7 @@
 import { ElMessage } from 'element-plus';
 import { ref, reactive, computed, nextTick, watch} from 'vue';
 import { uploadFile, createArticle, updataArticle} from '../api/admin';
-import { fileBaseUrl } from '../config';
+import { resolveFileUrl } from '../config';
 import RichTextEditor from './RichTextEditor.vue'
 //来自于父组件Knowledge
 const props = defineProps({
@@ -161,7 +161,7 @@ const handleUploadRequest =async ({file}) =>{
     console.log(fileRes,'上传返回的 fileRes 完整数据：')
 
     //拼接完整图片路径
-    imgUrl.value = fileBaseUrl + fileRes.filePath
+    imgUrl.value = resolveFileUrl(fileRes.filePath)
     formData.coverImage = fileRes.filePath
  
 }
@@ -229,7 +229,7 @@ watch(() =>props.article, (newVal) =>{
             //使用现有ID
             businessId.value = newVal.id
             //封面Url
-            imgUrl.value = fileBaseUrl + newVal.coverImage
+            imgUrl.value = resolveFileUrl(newVal.coverImage)
         })
     }
 })
