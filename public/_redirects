@@ -1,0 +1,5 @@
+# API 请求转发到你的后端服务器
+/api/*  http://159.75.169.224:1235/api/:splat  200
+
+# SPA 路由支持（所有其他请求返回 index.html）
+/*  /index.html  200

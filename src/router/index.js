@@ -5,7 +5,7 @@ import Dashboard from "../views/Dashboard.vue";
 import Knowledge from "../views/Knowledge.vue";
 import Consultations from "../views/Consultations.vue";
 import Emotional from "../views/Emotional.vue";
-import Authlayout from "../components/Authlayout.vue";
+import Authlayout from "../components/AuthLayout.vue";
 import login from "../views/login.vue";
 import register from "../views/register.vue";
 import FrontendLayout from "../components/FrontendLayout.vue";
