@@ -1135,4 +1135,244 @@ onMounted(() => {
 
     }
 }
+
+// 响应式设计
+@media (max-width: 1200px) {
+    .consultation-container {
+        width: 100%;
+        max-width: 1200px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .consultation-container {
+        flex-direction: column;
+        padding: 15px;
+        
+        .sidebar {
+            width: 100%;
+            order: 2;
+            
+            .session-history {
+                max-height: 300px;
+            }
+            .ai-assistant-info {
+                display: none;
+            }
+        }
+        
+        .chat-main {
+            order: 1;
+            flex: 1;
+            min-height: 500px;
+            
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .consultation-container {
+        padding: 10px;
+        gap: 10px;
+        
+        .sidebar {
+            .ai-assistant-info {
+                padding: 12px;
+                
+                .breathing-circle {
+                    width: 50px;
+                    height: 50px;
+                }
+                
+                .assistant-name {
+                    font-size: 14px;
+                }
+            }
+            
+            .emotion-garden {
+                padding: 12px;
+                
+                .garden-title {
+                    font-size: 14px;
+                }
+                
+                .emotion-info {
+                    .emotion-name {
+                        font-size: 14px;
+                    }
+                    
+                    .emotion-score {
+                        font-size: 24px;
+                    }
+                }
+            }
+            
+            .session-history {
+                padding: 12px;
+                
+                .section-title {
+                    font-size: 14px;
+                }
+                
+                .session-list {
+                    max-height: 200px;
+                    
+                    .session-item {
+                        padding: 10px;
+                        
+                        .session-info {
+                            .session-title {
+                                font-size: 13px;
+                                
+                                .session-time {
+                                    font-size: 11px;
+                                }
+                                
+                                .session-preview {
+                                    font-size: 12px;
+                                }
+                                
+                                .session-stats {
+                                    font-size: 11px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        .chat-main {
+            border-radius: 12px;
+            
+            .chat-header {
+                padding: 12px 16px;
+                
+                .header-left {
+                    .chat-avatar {
+                        width: 36px;
+                        height: 36px;
+                    }
+                    
+                    .chat-info {
+                        h2 {
+                            font-size: 16px;
+                        }
+                        
+                        p {
+                            font-size: 12px;
+                        }
+                    }
+                }
+                
+            }
+            
+            .chat-messages {
+                padding: 16px;
+                
+                .message-item {
+                    .message-avatar {
+                        width: 32px;
+                        height: 32px;
+                    }
+                    
+                    .message-content {
+                        .message-bubble {
+                            padding: 12px 16px;
+                            font-size: 14px;
+                            border-radius: 12px;
+                        }
+                        
+                        .message-time {
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+            
+            .chat-input {
+                padding: 12px 16px;
+                flex-direction: column;
+                
+                .input-container {
+                    width: 100%;
+                }
+                
+                .send-btn {
+                    width: 100%;
+                    height: 48px;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .consultation-container {
+        padding: 8px;
+        
+        .sidebar {
+            .emotion-garden {
+                .warm-tips {
+                    .emotion-status-text {
+                        font-size: 12px;
+                    }
+                    
+                    .emotion-intensity {
+                        .intensity-text {
+                            font-size: 11px;
+                        }
+                    }
+                    
+                    .warm-suggestion,
+                    .healing-actions,
+                    .risk-notice {
+                        padding: 10px;
+                        
+                        .suggestion-title,
+                        .actions-title,
+                        .notice-title {
+                            font-size: 12px;
+                        }
+                        
+                        .suggestion-text,
+                        .action-text,
+                        .notice-text {
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .chat-main {
+            .chat-messages {
+                padding: 12px;
+                
+                .message-item {
+                    .message-avatar {
+                        width: 28px;
+                        height: 28px;
+                    }
+                    
+                    .message-content {
+                        .message-bubble {
+                            padding: 10px 12px;
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+            
+            .chat-input {
+                padding: 10px 12px;
+                
+                .input-footer {
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+}
 </style>

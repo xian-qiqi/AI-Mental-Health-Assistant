@@ -9,7 +9,7 @@
         <div class="content">
             <!-- 左侧内容 -->
             <div class="recommend-section">
-                <div class="section-titl">推荐阅读</div>
+                <div class="section-title">推荐阅读</div>
                 <div class="recommend-list">
                     <div class="recommend-item" v-for="book in recommendList" :key="book.id" @click="goToArticleDetail(book.id)">
                         <div class="title">{{ book.title }}</div>
@@ -239,6 +239,220 @@ onMounted(()=>{
         display: flex;
         justify-content: center;
         padding-bottom: 30px;
+    }
+}
+
+// 响应式设计
+@media (max-width: 1200px) {
+    .knowledge-container {
+        .content {
+            width: 100%;
+            max-width: 1200px;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .knowledge-container {
+        .header-section {
+            padding: 40px 20px;
+            
+            .header-content {
+                h1 {
+                    font-size: 24px;
+                }
+            }
+        }
+        
+        .content {
+            width: 100%;
+            padding: 15px;
+            gap: 15px;
+            
+            .recommend-section {
+                width: 250px;
+                height: 350px;
+                
+                .section-title {
+                    font-size: 14px;
+                }
+                
+                .recommend-list {
+                    .recommend-item {
+                        .title {
+                            font-size: 14px;
+                        }
+                        
+                        .read-count {
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+            
+            .article-list {
+                .article-item {
+                    .getImage {
+                        width: 200px;
+                        height: 130px;
+                    }
+                    
+                    .info {
+                        margin-left: 15px;
+                        
+                        .title {
+                            h3 {
+                                font-size: 16px;
+                            }
+                        }
+                        
+                        .flex-box {
+                            span {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .knowledge-container {
+        .header-section {
+            padding: 30px 15px;
+            
+            .header-content {
+                gap: 8px;
+                
+                h1 {
+                    font-size: 20px;
+                }
+            }
+        }
+        
+        .content {
+            flex-direction: column;
+            padding: 15px;
+            
+            .recommend-section {
+                width: 100%;
+                height: auto;
+                order: 1;
+                
+                .section-title {
+                    font-size: 16px;
+                }
+                
+                .recommend-list {
+                    .recommend-item {
+                        padding: 12px;
+                        
+                        .title {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+            
+            .article-list {
+                order: 2;
+                
+                .article-item {
+                    flex-direction: column;
+                    padding: 12px;
+                    
+                    .getImage {
+                        width: 100%;
+                        height: 180px;
+                        margin-bottom: 12px;
+                    }
+                    
+                    .info {
+                        margin-left: 0;
+                        
+                        .title {
+                            h3 {
+                                font-size: 15px;
+                            }
+                        }
+                        
+                        .flex-box {
+                            span {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        .pagination-wrapper {
+            padding-bottom: 20px;
+            
+            .el-pagination {
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .knowledge-container {
+        .header-section {
+            padding: 20px 10px;
+            
+            .header-content {
+                h1 {
+                    font-size: 18px;
+                }
+            }
+        }
+        
+        .content {
+            padding: 10px;
+            
+            .recommend-section {
+                padding: 12px;
+                
+                .recommend-list {
+                    gap: 0.8rem;
+                    
+                    .recommend-item {
+                        padding: 10px;
+                        
+                        .title {
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+            
+            .article-list {
+                .article-item {
+                    padding: 10px;
+                    
+                    .getImage {
+                        height: 150px;
+                    }
+                    
+                    .info {
+                        .title {
+                            h3 {
+                                font-size: 14px;
+                            }
+                        }
+                        
+                        .flex-box {
+                            span {
+                                font-size: 11px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 </style>

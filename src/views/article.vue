@@ -141,6 +141,8 @@ onMounted(() =>{
                 margin-top: 20px;
                 display: flex;
                 align-items: center;
+                flex-wrap: wrap;
+                gap: 12px;
 
                 .category-tag {
                     margin-right: 20px;
@@ -166,6 +168,18 @@ onMounted(() =>{
             .content-wrapper {
                 font-size: 15px;
                 color: #374151;
+
+                :deep(img) {
+                    max-width: 100%;
+                    height: auto;
+                    display: block;
+                }
+
+                :deep(table) {
+                    width: 100%;
+                    display: block;
+                    overflow-x: auto;
+                }
 
                 :deep(p) {
                     margin-bottom: 10px;
@@ -219,6 +233,156 @@ onMounted(() =>{
                     display: flex;
                     flex-wrap: wrap;
                     gap: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .articleDetail-container {
+        .header-section {
+            padding: 36px 20px;
+
+            .header-content {
+                h1 {
+                    font-size: 26px;
+                }
+            }
+        }
+
+        .content {
+            width: 100%;
+            padding: 16px;
+
+            .diary-card {
+                padding: 18px;
+
+                .article-title {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .articleDetail-container {
+        .header-section {
+            padding: 24px 15px;
+
+            .header-content {
+                gap: 10px;
+
+                h1 {
+                    font-size: 22px;
+                    line-height: 1.2;
+                }
+
+                :deep(.el-image) {
+                    width: 42px !important;
+                    height: 42px !important;
+                }
+            }
+        }
+
+        .content {
+            padding: 12px;
+
+            .diary-card {
+                padding: 14px;
+                border-radius: 12px;
+
+                .title {
+                    font-size: 18px;
+                    margin-bottom: 12px;
+                }
+
+                .sub-title {
+                    margin-top: 14px;
+                    align-items: flex-start;
+                }
+
+                .article-title {
+                    font-size: 20px;
+                    margin-top: 18px;
+                    line-height: 1.35;
+                }
+
+                .summary-content {
+                    padding: 10px 12px;
+                }
+
+                .flex-box {
+                    flex-wrap: wrap;
+                    gap: 10px 14px;
+
+                    .item {
+                        margin-right: 0;
+                    }
+                }
+
+                .content-wrapper {
+                    font-size: 14px;
+
+                    :deep(h1) {
+                        font-size: 1.35em;
+                    }
+
+                    :deep(h2) {
+                        font-size: 1.15em;
+                    }
+
+                    :deep(h3) {
+                        font-size: 1.05em;
+                    }
+
+                    :deep(pre.code-block) {
+                        padding: 0.85em;
+                        font-size: 0.8em;
+                    }
+                }
+
+                .tags-content {
+                    .tags-list {
+                        gap: 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .articleDetail-container {
+        .header-section {
+            padding: 20px 12px;
+
+            .header-content {
+                align-items: flex-start;
+
+                h1 {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .content {
+            padding: 10px;
+
+            .diary-card {
+                padding: 12px;
+
+                .article-title {
+                    font-size: 18px;
+                }
+
+                .summary-content {
+                    font-size: 14px;
+                }
+
+                .content-wrapper {
+                    font-size: 13px;
                 }
             }
         }

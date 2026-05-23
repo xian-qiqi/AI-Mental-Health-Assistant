@@ -147,22 +147,31 @@ const submitForm = () => {
 <style lang="scss" scoped>
 .emotionDiary-container {
     background: linear-gradient(135deg, #fafbfc 0%, #f7f9fc 50%, #f2f6fa 100%);
+    min-height: 100vh;
 
     .header-section {
         background: linear-gradient(135deg, #7ED321 0%, #F5A623 100%);
         color: white;
-        padding: 48px;
+        padding: 48px 20px;
 
         .header-content {
             display: flex;
             align-items: center;
             gap: 12px;
+            max-width: 980px;
+            margin: 0 auto;
+            
+            h1 {
+                font-size: 28px;
+                font-weight: 600;
+            }
         }
     }
 
     .content {
         margin: 0 auto;
-        width: 980px;
+        width: 100%;
+        max-width: 980px;
         padding: 20px;
 
         .diary-card {
@@ -201,17 +210,25 @@ const submitForm = () => {
                     text-align: center;
                     cursor: pointer;
                     background: #F9FAFB;
+                    transition: all 0.3s ease;
 
                     .emotion-name {
                         margin-top: 10px;
-                        padding: 0 75px;
+                        padding: 0 20px;
                         color: #374151;
+                        font-size: 14px;
                     }
 
                     &.selected {
                         border-color: #7ED321;
                         background: #F0FDF4;
                         transform: translateY(-3px);
+                        box-shadow: 0 4px 12px rgba(126, 211, 33, 0.2);
+                    }
+                    
+                    &:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
                     }
                 }
             }
@@ -220,6 +237,7 @@ const submitForm = () => {
                 .form-label {
                     margin: 10px 0;
                     color: #374151;
+                    font-weight: 500;
                 }
 
                 .life-indicators {
@@ -232,7 +250,165 @@ const submitForm = () => {
                 }
 
                 .action-buttons {
-                    margin-top: 40px
+                    margin-top: 40px;
+                    display: flex;
+                    gap: 15px;
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+}
+
+// 平板设备
+@media (max-width: 1024px) {
+    .emotionDiary-container {
+        .header-section {
+            padding: 40px 20px;
+            
+            .header-content {
+                h1 {
+                    font-size: 24px;
+                }
+            }
+        }
+        
+        .content {
+            padding: 15px;
+            
+            .diary-card {
+                padding: 18px;
+                
+                .title {
+                    font-size: 22px;
+                }
+                
+                .emotion-grid {
+                    .emotion-card {
+                        padding: 12px;
+                        
+                        .emotion-name {
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 移动设备
+@media (max-width: 768px) {
+    .emotionDiary-container {
+        .header-section {
+            padding: 30px 15px;
+            
+            .header-content {
+                gap: 8px;
+                
+                h1 {
+                    font-size: 20px;
+                }
+            }
+        }
+        
+        .content {
+            padding: 15px;
+            
+            .diary-card {
+                padding: 15px;
+                margin-bottom: 15px;
+                
+                .title {
+                    font-size: 18px;
+                    margin-bottom: 15px;
+                }
+                
+                .section {
+                    p {
+                        font-size: 14px;
+                    }
+                    
+                    .rate {
+                        display: flex;
+                justify-content: center;
+                    }
+                }
+                
+                .emotion-grid {
+                    gap: 8px;
+                    justify-content: center;
+                    
+                    .emotion-card {
+                        padding: 10px;
+                        width: calc(50% - 4px);
+                        
+                        .emotion-name {
+                            font-size: 12px;
+                            padding: 0 10px;
+                        }
+                    }
+                }
+                
+                .detail-form {
+                    .life-indicators {
+                        flex-direction: column;
+                        gap: 15px;
+                    }
+                    
+                    .action-buttons {
+                        flex-direction: column;
+                        
+                        .el-button {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 小屏移动设备
+@media (max-width: 480px) {
+    .emotionDiary-container {
+        .header-section {
+            padding: 20px 10px;
+            
+            .header-content {
+                h1 {
+                    font-size: 18px;
+                }
+            }
+        }
+        
+        .content {
+            padding: 10px;
+            
+            .diary-card {
+                padding: 12px;
+                
+                .title {
+                    font-size: 16px;
+                }
+                
+                .emotion-grid {
+                    gap: 6px;
+                    
+                    .emotion-card {
+                        padding: 8px;
+                        width: calc(50% - 3px);
+                        
+                        .emotion-name {
+                            font-size: 11px;
+                        }
+                    }
+                }
+                
+                .detail-form {
+                    .form-label {
+                        font-size: 14px;
+                    }
                 }
             }
         }

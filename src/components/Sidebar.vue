@@ -50,6 +50,7 @@ const selectMenu = (key) => {
 <style lang="scss" scoped>
   .menu-style{
     height: 100%;
+    
     .brand{
       display: flex;
       align-items: center;
@@ -57,21 +58,60 @@ const selectMenu = (key) => {
       padding: 10px;
       background-color: #fff;
       border-bottom: 1px solid #e5e7eb;
-      // scss语法可以嵌套写
+      
       .info-card{
         .brand-title{
           font-size: 20px;
           font-weight: bold;
           margin-bottom: 5px;
           color: #1f2937;
+          
+          @media (max-width: 768px) {
+            font-size: 16px;
+          }
         }
+        
         .brand-subtitle{
           font-size: 14px;
           color: #6b7280;
+          
+          @media (max-width: 768px) {
+            font-size: 12px;
+          }
         }
       }
     }
   }
   
+  // 响应式设计
+  @media (max-width: 1024px) {
+    .menu-style {
+      .brand {
+        padding: 8px;
+        
+        .info-card {
+          .brand-title {
+            font-size: 18px;
+          }
+          
+          .brand-subtitle {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
   
+  @media (max-width: 768px) {
+    .menu-style {
+      .brand {
+        justify-content: center;
+        padding: 6px;
+        
+        .info-card {
+          display: none;
+        }
+      }
+    }
+  }
 </style>

@@ -29,6 +29,10 @@
                         <el-button class="btn" type="primary" size="large" @click="submitForm(submitFormRef)">注册</el-button>
                     </el-form-item>
                 </el-form>
+                <div class="back-to-login">
+                    <span class="login-text">已有账户？</span>
+                    <router-link to="/auth/login" class="login-link">立即登录</router-link>
+                </div>
             </div>
         </div>
     </div>
@@ -91,6 +95,8 @@ const submitForm = async (formEl) => {
 <style lang="scss" scoped>
 .container {
     width: 384px;
+    max-width: 100%;
+    padding: 20px;
 
     .flex-box {
         display: flex;
@@ -104,11 +110,28 @@ const submitForm = async (formEl) => {
             h2 {
                 font-size: 36px;
                 margin-bottom: 10px;
+                color: #1f2937;
+                
+                @media (max-width: 768px) {
+                    font-size: 28px;
+                }
+                
+                @media (max-width: 480px) {
+                    font-size: 24px;
+                }
             }
 
             p {
                 font-size: 18px;
                 color: #6b7280;
+                
+                @media (max-width: 768px) {
+                    font-size: 16px;
+                }
+                
+                @media (max-width: 480px) {
+                    font-size: 14px;
+                }
             }
         }
     }
@@ -119,12 +142,98 @@ const submitForm = async (formEl) => {
         .btn {
             margin-top: 40px;
             width: 100%;
+            min-height: 48px;
+            font-size: 16px;
+            border-radius: 8px;
+            
+            @media (max-width: 768px) {
+                margin-top: 30px;
+                font-size: 15px;
+            }
+            
+            @media (max-width: 480px) {
+                margin-top: 25px;
+                font-size: 14px;
+                min-height: 44px;
+            }
+        }
+        
+        .back-to-login {
+            margin-top: 25px;
+            text-align: center;
+            padding: 15px 0;
+            
+            @media (max-width: 768px) {
+                margin-top: 20px;
+                padding: 12px 0;
+            }
+            
+            @media (max-width: 480px) {
+                margin-top: 15px;
+                padding: 10px 0;
+            }
+            
+            .login-text {
+                color: #6b7280;
+                font-size: 14px;
+                margin-right: 5px;
+                
+                @media (max-width: 768px) {
+                    font-size: 13px;
+                }
+                
+                @media (max-width: 480px) {
+                    font-size: 12px;
+                }
+            }
+            
+            .login-link {
+                color: #4A90E2;
+                font-size: 14px;
+                font-weight: 500;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                border-bottom: 1px solid transparent;
+                
+                &:hover {
+                    color: #357ABD;
+                    border-bottom-color: #357ABD;
+                }
+                
+                &:active {
+                    color: #2A5F8F;
+                }
+                
+                @media (max-width: 768px) {
+                    font-size: 13px;
+                }
+                
+                @media (max-width: 480px) {
+                    font-size: 12px;
+                }
+            }
         }
 
         .footer {
             padding: 30px;
             text-align: center;
         }
+    }
+}
+
+// 响应式容器
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        max-width: 400px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 10px;
     }
 }
 </style>
